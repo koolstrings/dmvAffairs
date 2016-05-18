@@ -1,0 +1,84 @@
+<ion-view>
+  <ion-nav-buttons side="primary">
+    <dmv-header></dmv-header>
+  </ion-nav-buttons>
+  <ion-content class="energized-bg">
+      <main-menu></main-menu>
+      <div class="h2 text-center padding-top assertive">Ok! lets plan...</div>
+    <div class="row">
+
+      <div class="col col25 dmvPlannerCard">
+        <div class="item item-divider text-center assertive-bg">
+          What
+        </div>
+        <div class="item item-text-wrap energized-bg">
+          Begin here, select from below the most apt for what you are planning
+        </div>
+        <div class="item item-divider assertive-bg">
+          <ion-list ng-click="showWhere=true">
+            <ion-radio ng-model="vm.choice" ng-value="'party'">Organize a party</ion-radio>
+            <ion-radio ng-model="vm.choice" ng-value="'marriage'">Marriage</ion-radio>
+            <ion-radio ng-model="vm.choice" ng-value="'grocery pickup'">Pickup grocery</ion-radio>
+            <ion-radio ng-model="vm.choice" ng-value="'babysitting'">Need a babysitter</ion-radio>
+          </ion-list>
+        </div>
+      </div>
+
+      <div class="col col25 dmvPlannerCard">
+        <div class="item item-divider text-center assertive-bg">
+          Where
+        </div>
+        <div class="item item-text-wrap energized-bg"  ng-show="showWhere">
+          Now, please fill in the contact details for this {{vm.choice}} here
+        </div>
+        <div class="item item-text-wrap" ng-click="showWhen=true">
+          <form method="post" class="energized-bg">
+            <div class="list">
+              <label class="item item-input">
+                <input type="text" placeholder="First Name" name="fname">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="Last Name" name="lname">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="Email" name="email">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="Phone" name="phone">
+              </label>
+              <label class="item item-input">
+                <input type="text" placeholder="Address" name="adress">
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col col25">
+        <div class="item item-divider text-center assertive-bg">
+          When
+        </div>
+        <div class="item item-text-wrap energized-bg"   ng-show="showWhen">
+          And next, we also need to know the time and date for the occasion..
+        </div>
+        <div class="item item-text-wrap "ng-click="addDetails=true">
+          MM//DD//YYYY </br>
+          a calender will be placed here.... but click to go to next field
+          <date-picker></date-picker>
+        </div>
+      </div>
+
+      <div class="col col25">
+        <div class="item item-divider text-center assertive-bg">
+          Add details
+        </div>
+        <div class="item item-text-wrap energized-bg" ng-show="addDetails">
+          Finally, your comments/ additional instructions etc..
+        </div>
+        <div class="item item-text-wrap ">
+          <textarea></textarea>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,11 @@
+.dmvHeader{
+  height: 33px !important;
+  border: 2px solid dodgerblue !important;
+}
+
+.googleBG{
+  background-image: url('http://www.wired.com/wp-content/uploads/2015/09/Google.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
